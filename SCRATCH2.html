@@ -1,0 +1,37 @@
+<html>
+<title>Level 1</title>
+<head></head>
+<style>
+.circle
+{
+	width:50px;
+	height:50px;
+	border-radius:50px;
+	background-color:#099;
+	position:absolute;
+}
+</style>
+<body onLoad="mover()">
+<div id="Dot" class="circle"></div>
+<script>
+var obj1=document.getElementById("Dot");
+var angle=0;
+function mover()
+{
+	var x=100*Math.cos(angle*Math.PI/180);
+	var y=100*Math.sin(angle*Math.PI/180);
+	angle+=5;
+	if(angle>360)
+	angle=0;
+	obj1.style.left=200+x+'px';
+	obj1.style.top=200+y+'px';
+	
+}
+setInterval("mover()",30);
+</script>
+</body>
+</html>
+
+	
+	
+	

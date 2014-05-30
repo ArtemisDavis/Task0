@@ -1,0 +1,69 @@
+<html>
+<title>Level 2</title>
+<head></head>
+<style>
+.circle
+{
+	width:50px;
+	height:50px;
+	border-radius:50px;
+	background-color:#099;
+	position:absolute;
+	}
+</style>
+<body onLoad="mover()">
+<div id="Dot" class="circle"></div>
+<div style="float:left;top:100px;left:300px">
+<input type="range" step="1" min="0" max="2" id="Slider"/>
+</div>
+<script>
+var obj1=document.getElementById("Dot");
+var val1=document.getElementById("Slider");
+var i=0;
+var j=0;
+var speed;
+var spd;
+
+function mover()
+{
+	if(val1.value==2)
+    speed=15;
+    if(val1.value==1)
+    speed=10;
+    if(val1.value==0)
+    speed=5;
+	
+	if(j==0 && i<100)
+	i+=speed;
+	else
+	if(j==0 && i==100)
+	j+=speed;
+	else
+	if(j<100 && i==100)
+	j+=speed;
+	else
+	if(j==100 && i==100)
+	i-=speed;
+	else
+	if(j==100 && i>0)
+	i-=speed;
+	else
+	if(j==100 && i==0)
+	j-=speed;
+	else
+	if(j>0 && i==0)
+	j-=speed;
+	
+	obj1.style.left=100+i+'px';
+	obj1.style.top=100+j+'px';
+	
+	
+}
+setInterval("mover()",50);
+</script>
+</body>
+</html>
+
+	
+	
+	
